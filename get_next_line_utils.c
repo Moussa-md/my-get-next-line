@@ -11,6 +11,26 @@
 /* ************************************************************************** */
 #include "get_next_line.h"
 
+int	ft_strlcpy(char *dst, const char *src, int size)
+{
+	int	len;
+	int	i;
+
+	len = 0;
+	i = 0;
+	while (src[len])
+		len++;
+	if (size == 0)
+		return (len);
+	while (src[i] && i < size - 1)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (len);
+}
+
 char	*ft_strjoin(char *s1, char *s2)
 {
 	int		len1;
